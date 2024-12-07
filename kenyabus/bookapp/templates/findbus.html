@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+            <h2>Find Bus</h2>
+            <form action="{% url 'findbus' %}" method="post">
+                {% csrf_token %}
+
+                <div class="form-group row">
+                    <label for="source" class="col-2 col-form-label">From</label>
+                    <div class="col-10">
+                        <input name="source" class="form-control" type="text" id="source" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="destination" class="col-2 col-form-label">Destination</label>
+                    <div class="col-10">
+                        <input name="destination" class="form-control" type="text" id="destination" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="date" class="col-2 col-form-label">Date</label>
+                    <div class="col-10">
+                        <input name="date" class="form-control" type="date" id="date" required>
+                    </div>
+                </div>
+
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-success float-right">Find Bus</button>
+                </div>
+
+                {% if error %}
+                <div class="alert alert-danger mt-3">{{ error }}</div>
+                {% endif %}
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

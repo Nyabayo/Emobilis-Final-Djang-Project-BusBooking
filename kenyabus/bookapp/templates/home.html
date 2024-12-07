@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <!-- Main Welcome Section -->
+        <center>
+            <h1>Welcome to Kenya Bus Booking</h1>
+            <p>Your one-stop solution for comfortable and reliable bus travel across Kenya.</p>
+        </center>
+
+        <!-- Info Section about Services -->
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <h3>Find a Bus</h3>
+                <p>Search for available buses by source, destination, and travel date. You can easily browse through our buses and make bookings with just a few clicks.</p>
+                <a href="{% url 'findbus' %}" class="btn btn-primary">Start Searching</a>
+            </div>
+            <div class="col-md-4">
+                <h3>Make a Booking</h3>
+                <p>Once you find a suitable bus, you can proceed to book your seat instantly. We offer flexible payment options for a hassle-free experience.</p>
+                <a href="{% url 'findbus' %}" class="btn btn-success">Book Now</a>
+            </div>
+            <div class="col-md-4">
+                <h3>View Bookings</h3>
+                <p>Keep track of your previous bookings and their status. You can also cancel bookings if needed.</p>
+                <a href="{% url 'seebookings' %}" class="btn btn-info">View Bookings</a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li>Wide selection of buses across multiple routes.</li>
+                    <li>Easy-to-use interface for seamless booking.</li>
+                    <li>Competitive pricing with real-time seat availability updates.</li>
+                    <li>Secure and simple payment options.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3>Our Bus Fleet</h3>
+                <p>We operate a fleet of modern buses that ensure comfort and safety for your journey. Each bus is well-maintained, with amenities to make your ride enjoyable.</p>
+                <a href="#" class="btn btn-warning">Explore Our Fleet</a>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row mt-5">
+            <div class="col text-center">
+                <h3>Ready to Book Your Journey?</h3>
+                <p>Start exploring our buses and book your seat today!</p>
+                <a href="{% url 'findbus' %}" class="btn btn-danger btn-lg">Book Your Seat Now</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
